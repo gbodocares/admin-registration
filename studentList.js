@@ -1,6 +1,6 @@
 
 
-db.collection("students").where('userId', '!=', '')
+db.collection("students").where('userId', '!=', ' ')
     .onSnapshot((querySnapshot) => {
         var students = [];
         querySnapshot.forEach((doc) => {
