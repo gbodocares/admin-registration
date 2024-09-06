@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="popup.css" rel="stylesheet" />
+    <link href="preview.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <divc class="container">
+        <div class="top">
+           
+            <input id="entireSearch" type="text" placeholder="Search here" />
+
+            <div class="disappear">
+                <select id="columnSelect">
+                    <option value="" disabled>Filter by categories</option>
+                    <option value="all">All Categories</option>
+                    <option value="RegID">Reg ID</option>
+                    <option value="Surname">Surname</option>
+                    <option value="Firstname">Firstname</option>
+                    <option value="Gender">Gender</option>
+                    <option value="Course1">Course1</option>
+                    <option value="Course2">Course2</option>
+                </select>
+                <input id="columnSearch" type="text" placeholder="Search column" />
+            </div>
+           
+        </div>
+       
+        <table>
+            <tr style="background-color: #000; color: white;">
+                <th>S/N</th>
+                <th>Photo</th>
+                <th>Reg ID</th>
+                <th>Surname</th>
+                <th>Firstname</th>
+                <th>Gender</th>
+                <th>Course1</th>
+                <th>Course2</th>
+
+            </tr>
+            <tbody id="geeks">
+              
+
+            </tbody>
+        </table>
+
+        <button class="open-button" onclick="openForm()">Open Form</button>
+
+        <!--<div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+                <h1>Login</h1>
+
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button type="submit" class="btn">Login</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>-->
+
+        <div class="form-popup" id="myForm">
+            <form action="" class="form-container form">
+                <p class="title">Register </p>
+                <p class="message">Register & Onboard students to the Portal</p>
+                <div class="flex">
+                    <label>
+                        <input class="input" type="text" placeholder="" required="" id="firstname">
+                        <span>Firstname</span>
+                    </label>
+    
+                    <label>
+                        <input class="input" type="text" placeholder="" required="" id="surname">
+                        <span>Surname</span>
+                    </label>
+                </div>  
+
+                <div class="flex">
+                    <label>
+                        <input class="input" type="date" placeholder="" required="" id="dob">
+                        <span>DOB</span> 
+                    </label> 
+                        
+                    <label>
+                        <input class="input" type="text" placeholder="" required="" id="lcda">
+                        <span>LCDA</span>
+                    </label>
+                </div>
+               
+
+                <div class="flex">
+                    <label>
+                        <select class="input" id="gender">
+                            <option disabled selected>---Choose gender---</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Others</option>
+                        </select>
+                        <span>Gender</span>
+                    </label>
+    
+                    <label>
+                        <input class="input" type="text" placeholder="" required="" id="mobile">
+                        <span>Mobile number</span>
+                    </label>
+                </div>
+                
+               
+               
+                <label>
+                    <input class="input" type="text" placeholder="" required="" id="address">
+                    <span>Address</span>
+                </label>
+
+                <label>
+                    <select class="input" id="course">
+                        <option disabled selected>---Select a Course---</option>
+                        <option value="Make-up">Make-up</option>
+                        <option value="Tailoring">Tailoring</option>
+                        <option value="Nails Decoration">Nails Decoration</option>
+                        <option value="Web Design">Web Design</option>
+                        <option value="UI/UX Design">UI/UX Design</option>
+                        <option value="Backend Dev">Backend Development</option>
+                        <option value="Videography">Videography</option>
+                        <option value="Video Editing">Video Editing</option>
+                    </select>
+                    <span>Course</span>
+                </label>
+
+
+                <label for="choose-file">Upload Passport</label> 
+                <input type="file" id="photo" /></br>
+            
+ 
+                <button class="submit" type='button' onclick="onboardStudent()">Submit</button>
+                <button class="submit1 button" onclick="closeForm()">Close form</button>
+            </form>
+        </div>
+        
+    
+       
+    </div>
+
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+            }
+
+            function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.8/uuid.min.js"></script>
+
+    <script src="config.js" ></script>
+    <script src="register.js"></script>
+    <script src="studentList.js"></script>
+    <script src="main.js"></script>
+    
+</body>
+</html>
