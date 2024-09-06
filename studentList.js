@@ -16,6 +16,7 @@ db.collection("students").where('userId', '!=', '')
                     <td>${student.surName}</td>
                     <td>${student.fisrtname}</td>
                     <td>${student.gender}</td>
+                    <td>${student.lga}</td>
                     <td>${student.firstcourse}</td>
                     <td>${student.secondcourse}</td>
               
