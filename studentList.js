@@ -6,7 +6,7 @@ db.collection("students").where('userId', '!=', ' ')
         querySnapshot.forEach((doc) => {
                 if(doc.data().formData){
                     students.push(doc.data().formData[0]);
-                    console.log("All students: ", students.join(" "))
+                    //console.log("All students: ", students.join(" "))
                     var counter = 1;
                     
                     var allstudents = students.map((student) => {
