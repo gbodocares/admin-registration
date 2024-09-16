@@ -5,6 +5,7 @@ function onboardStudent() {
 
     var today = new Date();
     var randomId = Math.floor(Math.random() * 1000);
+    var rId = randomId.toString();
     var surname = document.getElementById('surname').value;
     var firstname = document.getElementById('firstname').value;
     var dob = document.getElementById('dob').value;
@@ -14,7 +15,6 @@ function onboardStudent() {
     var course = document.getElementById('course').value;
     var phone = document.getElementById('mobile').value;
 
-    
 
     const ref = firebase.storage().ref();
     const file = document.getElementById('photo').files[0];
@@ -29,7 +29,7 @@ function onboardStudent() {
         console.log(url);
 
         db.collection("newstudents").add({
-        id: randomId,
+        id: rId,
         surName: surname,
         firstName: firstname,
         dob: dob,
