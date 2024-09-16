@@ -21,7 +21,8 @@ db.collection("students").where('userId', '!=', ' ')
                               <td>${student.lga}</td>
                               <td>${student.firstcourse}</td>
                               <td>${student.secondcourse}</td>
-                        
+                              <td>${student.phone}</td>
+                            
                           </tr>
                        
                       `
