@@ -21,7 +21,7 @@ db.collection("newstudents").get()
                               <td>${student.lcda}</td>
                               <td>${student.phone}</td>
                               <td>${student.course}</td>
-                        
+                              <td>${student.created_at}</td>
                           </tr>
                        
                       `
