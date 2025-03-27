@@ -22,7 +22,7 @@ db.collection("students").where('userId', '!=', ' ')
                               <td>${student.firstcourse}</td>
                               <td>${student.secondcourse}</td>
                               <td>${student.phone}</td>
-                            
+                              <td>${student.email}</td>
                           </tr>
                        
                       `

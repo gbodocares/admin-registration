@@ -1,4 +1,4 @@
-//Database for 7th edition
+// //Database for 7th edition
 // const firebaseConfig = {
 //     apiKey: "AIzaSyAUENQYbCNyU-xCptpbB1aRMUyTw5CVtw0",
 //     authDomain: "gclc-f7cbb.firebaseapp.com",
