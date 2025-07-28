@@ -29,7 +29,7 @@ function onboardStudent() {
     .then(url => {
         console.log(url);
 
-        db.collection("newstudents").add({
+        db.collection("hollidaySkillUp").add({
         id: rId,
         surName: surname,
         firstName: firstname,
