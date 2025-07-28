@@ -1,6 +1,6 @@
 
 
-db.collection("newstudents").get()
+db.collection("holidaySkillUp").get()
    .then((querySnapshot) => {
         var students = [];
         querySnapshot.forEach((doc) => {
