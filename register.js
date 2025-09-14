@@ -29,7 +29,7 @@ function onboardStudent() {
     .then(url => {
         console.log(url);
 
-        db.collection("pre-batch9-students").add({
+        db.collection("new-pre-batch9-students").add({
         id: rId,
         surName: surname,
         firstName: firstname,

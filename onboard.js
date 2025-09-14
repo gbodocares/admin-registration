@@ -1,6 +1,6 @@
 
 
-db.collection("pre-batch9-students").get()
+db.collection("new-pre-batch9-students").get()
    .then((querySnapshot) => {
         var students = [];
         querySnapshot.forEach((doc) => {
