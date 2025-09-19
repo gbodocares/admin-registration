@@ -59,8 +59,8 @@ db.collection(COLLECTION).onSnapshot((snapshot) => {
       <td>${escapeHtml(s.dob || '')}</td>
       <td>${escapeHtml(s.created_at || '')}</td>
       <td>
-        <button class="edit-btn" data-docid="${s.docId}">Edit</button>
-        <button class="delete-btn" data-docid="${s.docId}" data-imageurl="${escapeHtml(s.imageUrl || '')}">Delete</button>
+        <button class="edit-btn" data-docid="${s.docId}" style="background: none; color: teal;"><i class="bi bi-pencil-square"></i></button>
+        <button class="delete-btn" data-docid="${s.docId}" data-imageurl="${escapeHtml(s.imageUrl || '')}" style="background: none; color: red;"><i class="bi bi-trash3"></i></button>
       </td>
     </tr>
   `).join('');
