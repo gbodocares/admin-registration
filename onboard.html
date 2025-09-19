@@ -10,6 +10,45 @@
     <link href="popup.css" rel="stylesheet" />
     <link href="preview.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
+    <link href="onboard.css" rel="stylesheet" />
+    <style>
+        #toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            }
+
+            /* Toast message */
+            .toast {
+            background: #333;
+            color: #fff;
+            padding: 12px 20px;
+            margin-top: 10px;
+            border-radius: 6px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            font-family: sans-serif;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            }
+
+            /* Show effect */
+            .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+            }
+
+            /* Success style */
+            .toast.success {
+            background: #28a745;
+            }
+
+            /* Error style */
+            .toast.error {
+            background: #dc3545;
+        }
+    </style>
 </head>
 <body>
     <divc class="container">
@@ -48,13 +87,95 @@
                 <th>Course</th>
                 <th>DOB</th>
                 <th>Reg Date</th>
-
+                <th>Actions</th>
             </tr>
             <tbody id="onboard">
               
 
             </tbody>
         </table>
+
+        <!-- Edit Modal -->
+<div id="editModal" style="display: none;">
+    <!-- Spinner overlay -->
+    <div id="spinnerOverlay">
+    <div class="spinner"></div>
+    </div>
+
+  <div class="modal-content">
+    <span class="close" onclick="closeEditModal()">&times;</span>
+    <h2>Edit Student</h2>
+
+    <form id="editForm">
+      <input type="hidden" id="editDocId">
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="editSurname">Surname</label>
+          <input type="text" id="editSurname" required>
+        </div>
+
+        <div class="form-group">
+          <label for="editFirstname">Firstname</label>
+          <input type="text" id="editFirstname" required>
+        </div>
+
+        <div class="form-group">
+          <label for="editCourse">Course</label>
+          <select id="editCourse">
+             <option disabled selected>---Select a Course---</option>
+            <option value="Make-up">Make-up</option>
+            <option value="Tailoring">Tailoring</option>
+            <option value="Nails Decoration">Nails Technology</option>
+            <option value="Web Design">Web Design</option>
+            <option value="UI/UX Design">UI/UX Design</option>
+            <option value="Computer Networking">Computer Networking</option>
+            <option value="Videography">Videography & Photography</option>
+            <option value="Video Editing">Video Editing</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="editPhone">Phone</label>
+          <input type="text" id="editPhone" required>
+        </div>
+
+        <div class="form-group">
+          <label for="editDob">Date of Birth</label>
+          <input type="date" id="editDob">
+        </div>
+
+        <div class="form-group">
+          <label for="editLga">LGA</label>
+          <input type="text" id="editLga">
+        </div>
+
+        <div class="form-group">
+          <label for="editGender">Gender</label>
+          <select id="editGender">
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="editImage">Profile Image</label>
+          <input type="file" id="editImage" accept="image/*">
+          <img id="previewImage" style="max-width:100%; width: 200px; height: 200px; display:none; margin-top:10px; border:1px solid #ccc;">
+        </div>
+      </div>
+        
+
+      <div class="button-group">
+        <button type="submit" class="save-btn" id="saveBtn">Save Changes</button>
+        <button type="button" class="cancel-btn" onclick="closeEditModal()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
 
         <button class="open-button" onclick="openForm()">Open Form</button>
 
@@ -72,6 +193,8 @@
                 <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
             </form>
         </div>-->
+
+               
 
         <div class="form-popup" id="myForm">
             <form action="" class="form-container form">
@@ -155,6 +278,10 @@
        
     </div>
 
+    <!-- Toast container -->
+    <div id="toast-container" style="position:fixed; top:20px; right:20px; z-index:9999;"></div>
+
+
     <script>
         function openForm() {
             document.getElementById("myForm").style.display = "block";
@@ -176,5 +303,6 @@
     <script src="onboard.js"></script>
     <script src="main2.js"></script>
     
+
 </body>
 </html>
