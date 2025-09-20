@@ -17,8 +17,10 @@
 /* Modal content box */
 #editModal .modal-content {
   background: #fff;
-  width: 80%;        /* Wider modal */
-  max-width: 900px;  /* Limit on large screens */
+  width: 80%; /* Wider modal */
+  height:80%;  
+  overflow-y:scroll;      
+  max-width: 800px;  /* Limit on large screens */
   padding: 30px 40px;
   border-radius: 14px;
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.25);
@@ -121,7 +123,7 @@
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px 25px; /* row gap, column gap */
+  gap: 5px 25px; /* row gap, column gap */
   margin-bottom: 20px;
 }
 
