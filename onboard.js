@@ -87,6 +87,7 @@ function openEditModal(docId) {
   if (!s) return;
 
   document.getElementById("editDocId").value = docId;
+  document.getElementById("editRegNo").value = s.id || "";
   document.getElementById("editSurname").value = s.surName || "";
   document.getElementById("editFirstname").value = s.firstName || "";
   document.getElementById("editDob").value = s.dob || "";
@@ -139,6 +140,7 @@ editForm.addEventListener('submit', async function(e) {
 
   let updatedStudent = {
     surName: document.getElementById('editSurname').value,
+    id: document.getElementById('editRegNo').value,
     firstName: document.getElementById('editFirstname').value,
     dob: document.getElementById('editDob').value,
     phone: document.getElementById('editPhone').value,
